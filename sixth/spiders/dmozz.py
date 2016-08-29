@@ -8,7 +8,7 @@ Created on Thu Aug 25 14:34:16 2016
 import scrapy
 from sixth.items import DmozItem
 
-#from scrapy.selector import Selector
+
 
 class DmozSpider(scrapy.Spider):
     name = "dmoz"
@@ -31,6 +31,7 @@ class DmozSpider(scrapy.Spider):
             item['name'] = herf.xpath('div/div/a/text()')
             item['id1'] = herf.xpath('div/div/div/a/text()')
             sel = herf.xpath('div/div/div/a/@href')
+#这里后来想实现向下链接接着抓取，还没有调通
 
         for herf in response.xpath(''):
 
